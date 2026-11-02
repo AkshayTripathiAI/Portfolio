@@ -25,7 +25,7 @@ export const profile = {
   company: 'THINK Gas',
   // Experience shown across the site is computed from this date, so it never goes stale.
   careerStart: new Date(2023, 6, 1), // July 2023
-  resumeDriveId: '1EWYOtsccVPaKPQei4E-mTXGlCa4FxJ_A',
+  resumeDriveId: '1k0mGwIT8D9iVz03CX-jcrHxcOQKjGDFV',
 };
 
 export const socials = [
