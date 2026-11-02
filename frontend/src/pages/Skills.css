@@ -1,68 +1,38 @@
-.skills-summary {
-    text-align: center;
-    margin: 2rem 0;
-    font-size: 1.2rem;
-    color: #333;
+.proficiency {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 48px;
+  padding: 32px;
+}
+
+.proficiency:hover {
+  background: var(--surface);
+}
+
+.proficiency-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.proficiency-track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.proficiency-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--gradient);
+}
+
+@media (max-width: 700px) {
+  .proficiency {
+    grid-template-columns: 1fr;
+    padding: 22px;
   }
-  
-  .skills-grid .skill-item:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .skill-item p {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  
-  .skills-progress {
-    background-color: #1a1a1a;
-    padding: 2rem;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .skills-progress h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  
-  .skill-bar {
-    width: 300px;
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-  
-  .skill-name {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-  
-  .progress-bar {
-    background-color: #333;
-    border-radius: 5px;
-    overflow: hidden;
-    height: 10px;
-  }
-  
-  .progress {
-    height: 100%;
-    background-color: #ff6600;
-    width: 0; /* Start at 0% */
-    transition: width 2s ease-in-out; /* Smooth transition */
-  }
-  
-  .skill-level {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-  }
-  
+}

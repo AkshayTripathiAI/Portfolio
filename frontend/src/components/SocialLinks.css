@@ -1,41 +1,25 @@
 .social-links {
-    text-align: center;
-    margin-top: 2rem;
-  }
-  
-  .social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #555; /* Default color */
-    font-size: 1.5rem; /* Adjust size for consistency */
-    margin: 0 10px; /* Spacing between icons */
-    transition: color 0.3s ease;
-  }
-  
-  .social-links a i {
-    font-size: 2rem; /* Icon size */
-    margin-right: 0.5rem; /* Space between icon and text */
-  }
-  
-  .social-links a.linkedin-link {
-    color: #0077b5; /* LinkedIn color */
-  }
-  
-  .social-links a.github-link {
-    color: #333; /* GitHub color */
-  }
-  
-  .social-links a.twitter-link {
-    color: #1DA1F2; /* Twitter color */
-  }
-  
-  .social-links a.instagram-link {
-    color: #E1306C; /* Instagram color */
-  }
-  
-  .social-links a:hover {
-    color: #000; /* Hover effect: dark color for all links */
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-3px);
+}

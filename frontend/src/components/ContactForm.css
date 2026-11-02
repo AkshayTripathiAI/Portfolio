@@ -1,45 +1,118 @@
 .contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 1rem;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 32px;
+}
+
+.contact-form:hover {
+  background: var(--surface);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.25);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.form-field [aria-invalid='true'] {
+  border-color: var(--danger);
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 0.82rem;
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-submit {
+  align-self: flex-start;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(10, 13, 22, 0.35);
+  border-top-color: #0a0d16;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-  
-  .contact-form form {
-    display: flex;
-    flex-direction: column;
+}
+
+.form-status {
+  min-height: 1.4em;
+  font-size: 0.92rem;
+}
+
+.form-status-success {
+  color: var(--success);
+}
+
+.form-status-error {
+  color: var(--danger);
+}
+
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 22px;
   }
-  
-  .contact-form input, 
-  .contact-form textarea, 
-  .contact-form button {
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+
+  .form-row {
+    grid-template-columns: 1fr;
   }
-  
-  .contact-form input:focus, 
-  .contact-form textarea:focus {
-    border-color: #007bff;
-    outline: none;
+
+  .form-submit {
+    align-self: stretch;
   }
-  
-  .contact-form button {
-    background: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .contact-form button:hover {
-    background: #0056b3;
-  }
-  
-  .contact-form p {
-    margin-top: 1rem;
-    font-weight: bold;
-  }
-  
+}

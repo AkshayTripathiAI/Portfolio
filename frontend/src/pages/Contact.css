@@ -1,114 +1,53 @@
-/* Hero section */
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-  /* background-color: #f7f9fc; */
-  
-  margin-bottom: 2rem;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: start;
+  gap: 32px;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #f0f0f0;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #fff;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Contact form container */
-.contact-form-wrapper {
+.contact-info {
   display: flex;
-  justify-content: center;
-  padding: 3rem;
-  background-color: #121222;  /* Slight contrast to the page */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  margin: 2rem auto;  /* Adds space to the top and bottom */
-  max-width: 700px;  /* Centers form content */
+  flex-direction: column;
+  gap: 16px;
 }
 
-/* Contact form styling */
-.contact-form-wrapper form {
-  width: 100%;  /* Full width inside the wrapper */
-  padding: 2rem;
-  background: #121222;  /* White background inside */
-  border-radius: 8px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Social links section */
-.social-links {
-  text-align: center;
-  margin-top: 4rem;
-  padding: 2rem 0;
-  /* background-color: #f0f0f0; */
-  color: #fff;
-}
-
-.social-links h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
-}
-
-.social-icons {
+.contact-method {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
 }
 
-.social-icons a {
-  font-size: 2rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+.contact-method-label {
+  display: block;
+  color: var(--text-faint);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.social-icons a:hover {
-  transform: scale(1.2);
+.contact-method-value {
+  display: block;
+  font-weight: 500;
+  word-break: break-word;
 }
 
-/* Social link colors */
-.linkedin-link {
-  color: #0077b5;
+a.contact-method:hover .contact-method-value {
+  color: var(--accent-2);
 }
 
-.github-link {
-  color: #333;
+.contact-social {
+  margin-top: 12px;
 }
 
-.twitter-link {
-  color: #1da1f2;
-}
-
-.instagram-link {
-  color: #e1306c;
-}
-
-/* Footer section */
-footer {
-  background-color: #222;
-  color: #fff;
-  padding: 2rem 0;
-  text-align: center;
+.contact-social h2 {
+  margin-bottom: 12px;
   font-size: 1rem;
 }
 
-/* Additional responsiveness for small screens */
-@media (max-width: 768px) {
-  .contact-form-wrapper {
-    padding: 1.5rem;
-    margin: 1.5rem auto;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
+@media (max-width: 860px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 }

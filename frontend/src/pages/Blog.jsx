@@ -1,84 +1,81 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Reveal from '../components/Reveal';
+import SectionHeading from '../components/SectionHeading';
+import { blogPosts, socials, videos } from '../data/profile';
 import './Blog.css';
 
 function Blog() {
-  const blogPosts = [
-    {
-      id: 1,
-      title: 'Understanding React Hooks',
-      description:
-        'A comprehensive guide to using Hooks in React. Learn how to use `useState`, `useEffect`, and more to enhance your React applications.',
-      link: 'https://medium.com/.../understanding-react-hooks-...',
-    },
-    {
-      id: 2,
-      title: 'JavaScript ES6 Features',
-      description:
-        'Exploring the new features introduced in ECMAScript 6 (ES6). This includes let/const, arrow functions, classes, and more.',
-      link: 'https://dev.to/.../javascript-es6-features-...',
-    },
-    {
-      id: 3,
-      title: 'Introduction to Redux',
-      description:
-        'An introduction to managing application state with Redux. Learn how to set up Redux in your React app and handle global state efficiently.',
-      link: 'https://redux.js.org/.../introduction-to-redux-...',
-    },
-  ];
+  const linkedin = socials.find((s) => s.label === 'LinkedIn');
 
   return (
-    <div className="blog-page">
-      <Header />
+    <>
+      <section className="page-intro">
+        <div className="container">
+          <Reveal>
+            <span className="eyebrow">Blog</span>
+            <h1>Videos & writing</h1>
+            <p>Talks, walkthroughs and notes on building with LLMs and backend systems.</p>
+          </Reveal>
+        </div>
+      </section>
 
-      {/* YouTube Section */}
-      <section className="blog-youtube-section">
-        <h2 className="blog-section-title blog-animate-fadeIn">Featured Videos</h2>
-        <div className="blog-video-grid">
-          <div className="blog-video-item blog-animate-fadeInUp">
-            <iframe
-              width="100%"
-              height="315"
-              src="https://www.youtube.com/embed/aJAu4U_zzxE?si=fNTxcYi0smRwYC5e"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div className="blog-video-item blog-animate-fadeInUp">
-            <iframe
-              width="100%"
-              height="315"
-              src="https://www.youtube.com/embed/RN3bZLPAGkY?si=lXXYDAW71J1r051l"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+      <section className="section-tight">
+        <div className="container">
+          <SectionHeading eyebrow="Watch" title="Featured videos" />
+          <div className="video-grid">
+            {videos.map((video, index) => (
+              <Reveal key={video.id} delay={index * 0.08} className="video-card card">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${video.id}`}
+                  title={video.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-
-
-      <section className="blog-section">
-        <h1 className="blog-section-title blog-animate-fadeIn">Blog</h1>
-        <div className="blog-list">
-          {blogPosts.map((post) => (
-            <div key={post.id} className="blog-card blog-animate-fadeInUp">
-              <h2>{post.title}</h2>
-              <p>{post.description}</p>
-              <a href={post.link} target="_blank" rel="noopener noreferrer">
-                Read More
-              </a>
+      <section className="section">
+        <div className="container">
+          <SectionHeading eyebrow="Read" title="Articles" />
+          {blogPosts.length ? (
+            <div className="post-grid">
+              {blogPosts.map((post, index) => (
+                <Reveal key={post.link} delay={index * 0.08} className="post-card card">
+                  {post.date && <span className="post-date">{post.date}</span>}
+                  <h3>{post.title}</h3>
+                  <p>{post.description}</p>
+                  <a href={post.link} target="_blank" rel="noopener noreferrer" className="link-arrow">
+                    Read article <i className="bi bi-arrow-up-right" aria-hidden="true" />
+                  </a>
+                </Reveal>
+              ))}
             </div>
-          ))}
+          ) : (
+            <Reveal className="post-empty card">
+              <span className="icon-badge">
+                <i className="bi bi-pencil-square" aria-hidden="true" />
+              </span>
+              <div>
+                <h3>Articles are on the way</h3>
+                <p className="muted">
+                  I'm writing up lessons from building RAG and agentic systems in production. Follow along on LinkedIn to
+                  catch them first.
+                </p>
+              </div>
+              {linkedin && (
+                <a href={linkedin.href} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+                  <i className="bi bi-linkedin" aria-hidden="true" /> Follow
+                </a>
+              )}
+            </Reveal>
+          )}
         </div>
       </section>
-      <Footer />
-    </div>
+    </>
   );
 }
 
