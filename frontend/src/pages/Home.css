@@ -216,13 +216,34 @@
 @media (max-width: 960px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 24px;
     min-height: 0;
   }
 
+  /* Stacked layout: the photo shrinks to a round avatar so the name and headline
+     stay on the first screen. */
   .hero-visual {
     order: -1;
-    width: min(300px, 80%);
+    justify-self: start;
+    width: 112px;
+  }
+
+  .hero-photo-ring {
+    padding: 3px;
+    border-radius: 50%;
+    box-shadow: 0 12px 36px -12px rgba(139, 123, 255, 0.6);
+    transform: none;
+  }
+
+  .hero-photo {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-position: center 20%;
+    transform: none;
+  }
+
+  .hero-float {
+    display: none;
   }
 
   .stats-grid {
@@ -240,12 +261,8 @@
     padding-top: 40px;
   }
 
-  .hero-float-top {
-    left: -6%;
-  }
-
-  .hero-float-bottom {
-    right: -6%;
+  .hero-visual {
+    width: 88px;
   }
 
   .focus-grid {
