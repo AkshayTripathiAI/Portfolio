@@ -10,6 +10,18 @@ const chatRoutes = require('../routes/chatRoutes');
 
 const app = express();
 
+// vercel.json rewrites every request to this function, which replaces req.url with "/api".
+// The rewrite passes the original path as ?__path=..., so restore it before routing.
+app.use((req, res, next) => {
+    const url = new URL(req.url, 'http://localhost');
+    const originalPath = url.searchParams.get('__path');
+    if (originalPath !== null) {
+        url.searchParams.delete('__path');
+        req.url = `/${originalPath.replace(/^\/+/, '')}${url.search}`;
+    }
+    next();
+});
+
 // Vercel sits behind a proxy; needed so rate limiting sees the real client IP.
 app.set('trust proxy', 1);
 
@@ -28,7 +40,7 @@ app.get('/', (req, res) => res.json({ status: 'ok' }));
 app.use('/api/contact', contactRoutes);
 app.use('/api/chat', chatRoutes);
 
-app.use((req, res) => res.status(404).json({ error: 'Not found', method: req.method, path: req.originalUrl }));
+app.use((req, res) => res.status(404).json({ error: 'Not found', method: req.method, path: req.path }));
 
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
