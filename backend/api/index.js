@@ -17,7 +17,7 @@ app.set('trust proxy', 1);
 // When unset, every origin is allowed.
 const allowedOrigins = (process.env.CORS_ORIGIN || '')
     .split(',')
-    .map((origin) => origin.trim())
+    .map((origin) => origin.trim().replace(/\/+$/, '')) // browsers send origins without a trailing slash
     .filter(Boolean);
 app.use(cors({ origin: allowedOrigins.length ? allowedOrigins : '*' }));
 
