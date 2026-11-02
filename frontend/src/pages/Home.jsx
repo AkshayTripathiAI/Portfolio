@@ -62,7 +62,7 @@ function Home() {
             </div>
             <div className="hero-float hero-float-top">
               <i className="bi bi-stars" aria-hidden="true" />
-              <span>GenAI · RAG · Agents</span>
+              <span>Agents · RAG · Voice AI</span>
             </div>
             <div className="hero-float hero-float-bottom">
               <strong>{years}</strong>
@@ -93,14 +93,17 @@ function Home() {
             <SectionHeading eyebrow="About me" title="Turning LLMs into products people rely on" />
             <Reveal className="about-text">
               <p>
-                I'm a Software Development Engineer focused on Generative AI, building intelligent systems that solve
-                real-world problems. I design and develop RAG systems, agentic AI workflows and LLM fine-tuning
-                pipelines that power production-grade applications.
+                I'm a {profile.role} at {profile.company} with <span className="metric">{years} years</span> of
+                experience building production LLM, agentic AI and NLP systems in Python and FastAPI.
               </p>
               <p>
-                With <span className="metric">{years} years</span> at {profile.company} (since July 2023), I work at the
-                intersection of backend engineering and cutting-edge AI — from scalable FastAPI services and vLLM
-                inference to hybrid search and agentic orchestration on AWS.
+                Right now I'm building a KYC verification engine with VLM + OCR and agentic voice AI over telephony.
+                Before that, at Shorthills AI, I shipped serverless agents on AWS Bedrock, hybrid RAG over MongoDB Atlas
+                and an NLP inference service handling <span className="metric">1M+</span> queries a month.
+              </p>
+              <p>
+                I care about the unglamorous parts that make AI dependable: evaluation, monitoring, fallbacks and
+                containerised deployment. I also contribute fixes upstream to Hugging Face PEFT and VLMEvalKit.
               </p>
               <Link to="/portfolio" className="link-arrow">
                 See my experience <i className="bi bi-arrow-right" aria-hidden="true" />
@@ -161,7 +164,7 @@ function Home() {
         <div className="container">
           <Reveal className="cta-band">
             <h2>Have an AI idea worth building?</h2>
-            <p>I'm always happy to talk about RAG, agents, LLM fine-tuning or backend architecture.</p>
+            <p>I'm always happy to talk about agents, RAG, document intelligence or production ML systems.</p>
             <div className="btn-row">
               <Link to="/contact" className="btn btn-primary">
                 Get in touch <i className="bi bi-arrow-right" aria-hidden="true" />

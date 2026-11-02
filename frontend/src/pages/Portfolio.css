@@ -28,6 +28,19 @@
   font-size: 0.9rem;
 }
 
+.job-location {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.job-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 24px 26px;
+}
+
 /* ---------- Timeline ---------- */
 .timeline {
   position: relative;
@@ -121,6 +134,70 @@
   margin-top: 48px;
   padding-top: 32px;
   border-top: 1px solid var(--border);
+}
+
+/* ---------- Open source, certifications, education ---------- */
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.extras-columns {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+}
+
+.extras-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.extra-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px;
+}
+
+.extras-grid .extra-card {
+  height: 100%;
+}
+
+.extra-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.95rem;
+}
+
+.extra-title {
+  color: #fff;
+  font-weight: 600;
+}
+
+.extra-chip {
+  align-self: flex-start;
+  margin-top: 6px;
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--success);
+}
+
+a.extra-card:hover .extra-title {
+  color: var(--accent-2);
+}
+
+@media (max-width: 860px) {
+  .extras-grid,
+  .extras-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .extras-columns {
+    gap: 24px;
+  }
 }
 
 @media (max-width: 640px) {

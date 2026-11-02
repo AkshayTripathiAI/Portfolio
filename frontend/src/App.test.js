@@ -18,8 +18,8 @@ test('computes experience from the start date', () => {
 });
 
 test('highlights metrics in text', () => {
-  const metrics = splitMetrics('Handled 10L+ queries with 95%+ accuracy, 15k+ samples and 70% less effort')
+  const metrics = splitMetrics('Handled 1M+ queries over 10K+ documents with 95%+ accuracy, 15k+ samples and 70% less effort')
     .filter((part) => part.metric)
     .map((part) => part.text);
-  expect(metrics).toEqual(['10L+', '95%+', '15k+', '70%']);
+  expect(metrics).toEqual(['1M+', '10K+', '95%+', '15k+', '70%']);
 });

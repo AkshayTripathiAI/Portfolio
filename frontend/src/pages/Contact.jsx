@@ -41,6 +41,15 @@ function Contact() {
                 </span>
               </span>
             </div>
+            <div className="contact-method card">
+              <span className="icon-badge">
+                <i className="bi bi-geo-alt" aria-hidden="true" />
+              </span>
+              <span>
+                <span className="contact-method-label">Based in</span>
+                <span className="contact-method-value">{profile.location}</span>
+              </span>
+            </div>
             <div className="contact-social">
               <h2>Find me online</h2>
               <SocialLinks />

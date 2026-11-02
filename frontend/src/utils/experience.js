@@ -18,8 +18,8 @@ export function yearsLabel(months) {
   return years ? `${years}${months % 12 ? '+' : ''}` : `${months} months`;
 }
 
-// Splits text so numeric metrics like "95%+", "10L+", "15k+" can be emphasised.
-const METRIC_RE = /(\d+(?:[.,]\d+)?(?:k|L)?(?:%\+?|\+))/g;
+// Splits text so numeric metrics like "95%+", "1M+", "10K+" can be emphasised.
+const METRIC_RE = /(\d+(?:[.,]\d+)?(?:[kKLM])?(?:%\+?|\+))/g;
 export function splitMetrics(text) {
   return text.split(METRIC_RE).map((part, i) => ({ text: part, metric: i % 2 === 1 }));
 }

@@ -1,6 +1,6 @@
 # Akshay Tripathi – Portfolio
 
-Personal portfolio for Akshay Tripathi, Software Development Engineer focused on Generative AI and backend systems.
+Personal portfolio for Akshay Tripathi, Senior AI Engineer building agentic AI and production LLM systems.
 
 - **Frontend:** React 18 (Create React App), React Router, framer-motion, Bootstrap Icons
 - **Backend:** Node.js + Express API with MongoDB (Mongoose) that stores contact-form messages, deployed as a Vercel serverless function
