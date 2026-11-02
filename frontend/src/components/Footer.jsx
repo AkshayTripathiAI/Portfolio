@@ -1,36 +1,43 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { navLinks, profile } from '../data/profile';
+import SocialLinks from './SocialLinks';
 import './Footer.css';
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className="footer-component">
-      <div className="footer-content">
-        <div className="footer-section footer-about">
-          <h2>MyPortfolio</h2>
-          <p>Your go-to place to explore my work and get in touch.</p>
+    <footer className="site-footer">
+      <div className="container footer-grid">
+        <div className="footer-about">
+          <h2>{profile.name}</h2>
+          <p>{profile.role} · {profile.headline}</p>
+          <a href={`mailto:${profile.email}`} className="footer-email">
+            <i className="bi bi-envelope" aria-hidden="true" /> {profile.email}
+          </a>
         </div>
-        <div className="footer-section footer-links">
-          <h2>Quick Links</h2>
+
+        <nav className="footer-links" aria-label="Footer">
+          <h3>Explore</h3>
           <ul>
-            <li><a href="/portfolio">Portfolio</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/skills">Skills</a></li>
+            {navLinks.map(({ to, label }) => (
+              <li key={to}>
+                <Link to={to}>{label}</Link>
+              </li>
+            ))}
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
           </ul>
-        </div>
-        <div className="footer-section footer-social">
-          <h2>Connect with Me</h2>
-          <div className="footer-social-icons">
-            <a href="https://www.linkedin.com/in/akshaytripathi1050/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-            <a href="https://github.com/akshaytripathi0331" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-            <a href="https://x.com/Akshay_1050" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-            <a href="mailto:akshaytripathi1050@gmail.com"><FaEnvelope /></a>
-          </div>
+        </nav>
+
+        <div className="footer-social">
+          <h3>Connect</h3>
+          <SocialLinks />
         </div>
       </div>
-      <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} MyPortfolio | Designed by Akshay Tripathi</p>
+
+      <div className="container footer-bottom">
+        <p>&copy; {new Date().getFullYear()} {profile.name}. Built with React &amp; Node.js.</p>
       </div>
     </footer>
   );

@@ -1,111 +1,84 @@
-# MERN Portfolio
+# Akshay Tripathi – Portfolio
 
-## Overview
+Personal portfolio for Akshay Tripathi, Software Development Engineer focused on Generative AI and backend systems.
 
-This is a MERN (MongoDB, Express, React, Node.js) portfolio project that showcases a personal portfolio website. It includes both frontend and backend components to demonstrate skills and projects.
+- **Frontend:** React 18 (Create React App), React Router, framer-motion, Bootstrap Icons
+- **Backend:** Node.js + Express API with MongoDB (Mongoose) that stores contact-form messages, deployed as a Vercel serverless function
 
-## Project Structure
+## Project structure
 
 ```
-mern-portfolio/
+Portfolio/
 ├── backend/
-│   ├── controllers/          # Backend controllers
-│   ├── models/               # Backend models
-│   ├── routes/               # Backend routes
-│   ├── config/               # Configuration files
-│   ├── .env                  # Environment variables
-│   ├── server.js             # Entry point for the backend server
-├── frontend/
-│   ├── public/               # Public assets
-│   ├── src/                  # React source code
-│   │   ├── components/       # React components
-│   │   ├── pages/            # React pages
-│   │   ├── App.js            # Main React component
-│   │   ├── index.js          # Entry point for React app
-├── README.md                 # Project documentation
-├── package.json              # Project dependencies and scripts
-└── .gitignore                # Git ignore rules
+│   ├── api/index.js              # Express app (Vercel serverless entry)
+│   ├── server.js                 # Local dev entry – runs the app on PORT
+│   ├── config/db.js              # Cached MongoDB connection
+│   ├── controllers/              # Request handlers (contact form)
+│   ├── middleware/rateLimit.js   # Rate limiting for the contact endpoint
+│   ├── models/                   # Mongoose models
+│   ├── routes/                   # Express routes
+│   ├── vercel.json               # Routes every request to api/index.js
+│   └── .env.example
+└── frontend/
+    ├── public/
+    ├── src/
+    │   ├── components/           # Layout, header, footer, cards, contact form…
+    │   ├── pages/                # One component per route
+    │   ├── data/profile.js       # All site content: bio, experience, projects, skills, links
+    │   ├── utils/experience.js   # Experience duration helpers
+    │   ├── config.js             # API base URL
+    │   └── App.jsx               # Routes
+    ├── vercel.json               # SPA fallback so deep links work
+    └── .env.example
 ```
 
-## Getting Started
+Most content edits only touch [`frontend/src/data/profile.js`](frontend/src/data/profile.js). Years of experience
+are computed from `careerStart`, so they stay current automatically.
 
-To get started with this project, follow these steps:
+## Getting started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v14 or higher)
-- [MongoDB](https://www.mongodb.com/) (or use a cloud service like [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
+- [Node.js](https://nodejs.org/) 18 or newer
+- A MongoDB database (local or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
 
-### Installation
+### Backend
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/mern-portfolio.git
-   cd mern-portfolio
-   ```
-
-2. Install backend dependencies:
-
-   ```bash
-   cd backend
-   npm install
-   ```
-
-3. Install frontend dependencies:
-
-   ```bash
-   cd ../frontend
-   npm install
-   ```
-
-4. Configure environment variables:
-
-   Create a `.env` file in the `backend/` directory and add your environment variables. Example:
-
-   ```env
-   MONGO_URI=mongodb://localhost:27017/yourdb
-   PORT=5000
-   ```
-
-### Running the Application
-
-1. Start the backend server:
-
-   ```bash
-   cd backend
-   npm start
-   ```
-
-2. In a new terminal, start the frontend development server:
-
-   ```bash
-   cd frontend
-   npm start
-   ```
-
-3. Visit `http://localhost:3000` in your browser to view the portfolio.
-
-### Built With
-
-- [React](https://reactjs.org/) - Frontend framework
-- [Node.js](https://nodejs.org/) - Backend runtime
-- [Express](https://expressjs.com/) - Web framework for Node.js
-- [MongoDB](https://www.mongodb.com/) - NoSQL database
-
-## Contributing
-
-Feel free to submit issues or pull requests to improve the project. Please follow the standard GitHub guidelines for contributing.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- [Create React App](https://create-react-app.dev/) for the initial React setup
-- [Express Generator](https://expressjs.com/en/starter/generator.html) for backend boilerplate
-
+```bash
+cd backend
+npm install
+cp .env.example .env   # then set MONGO_URI
+npm run dev            # http://localhost:5000
 ```
 
-You can customize this template based on the specific details and requirements of your project.
+| Variable      | Description                                                                 |
+| ------------- | --------------------------------------------------------------------------- |
+| `MONGO_URI`   | MongoDB connection string (required)                                        |
+| `PORT`        | Local port, defaults to `5000`                                              |
+| `CORS_ORIGIN` | Comma-separated list of allowed origins. Leave empty to allow all origins. |
+
+`POST /api/contact` accepts `{ name, email, message }`. Input is validated and length-limited, and each IP can send
+5 messages per 15 minutes.
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm start              # http://localhost:3000
+```
+
+By default the frontend talks to the deployed backend. To use a local backend, create `frontend/.env`:
+
+```env
+REACT_APP_API_URL=http://localhost:5000
+```
+
+Other scripts: `npm test` and `npm run build`.
+
+## Deployment
+
+Both apps deploy to Vercel as separate projects:
+
+- **backend/** – set `MONGO_URI` (and ideally `CORS_ORIGIN` = your frontend URL) in the project's environment variables.
+- **frontend/** – set `REACT_APP_API_URL` to the backend URL if it differs from the default in `src/config.js`.

@@ -1,76 +1,64 @@
-import React, { useEffect, useRef } from 'react';
-import Header from '../components/Header';
+import React from 'react';
+import { motion } from 'framer-motion';
+import Reveal from '../components/Reveal';
+import SectionHeading from '../components/SectionHeading';
 import SkillsList from '../components/SkillsList';
+import { proficiency } from '../data/profile';
 import './Skills.css';
-import Footer from '../components/Footer';
 
 function Skills() {
-  const skillsRef = useRef(null);
-  const skills = [
-    { name: 'Python', level: 90 },
-    { name: 'FastAPI', level: 85 },
-    { name: 'RAG Systems', level: 90 },
-    { name: 'LLM Fine-tuning', level: 85 },
-    { name: 'Prompt Engineering', level: 90 },
-    { name: 'MongoDB', level: 80 },
-    { name: 'Weaviate', level: 80 },
-    { name: 'Docker', level: 85 },
-    { name: 'Redis', level: 75 },
-    { name: 'Celery', level: 80 },
-    { name: 'LangChain', level: 85 },
-    { name: 'vLLM', level: 80 },
-  ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.width = `${entry.target.dataset.level}%`;
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
-    const skillBars = document.querySelectorAll('.progress');
-
-    skillBars.forEach((bar) => {
-      observer.observe(bar);
-    });
-
-    return () => {
-      skillBars.forEach((bar) => {
-        observer.unobserve(bar);
-      });
-    };
-  }, []);
-
   return (
-    <div>
-      <Header />
-      <SkillsList />
-      <section className="skills-progress" ref={skillsRef}>
-        <h2>My Skills</h2>
-        <div className="skills-container">
-          {skills.map((skill, index) => (
-            <div key={index} className="skill-bar">
-              <span className="skill-name">{skill.name}</span>
-              <div className="progress-bar">
-                <div
-                  className="progress"
-                  data-level={skill.level}
-                ></div>
-              </div>
-              <span className="skill-level">{skill.level}%</span>
-            </div>
-          ))}
+    <>
+      <section className="page-intro">
+        <div className="container">
+          <Reveal>
+            <span className="eyebrow">Skills</span>
+            <h1>My toolkit</h1>
+            <p>The languages, frameworks and infrastructure I use to design, train and ship AI-powered systems.</p>
+          </Reveal>
         </div>
       </section>
-      <Footer />
-    </div>
+
+      <section className="section-tight">
+        <div className="container">
+          <SkillsList />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionHeading eyebrow="Depth" title="Where I'm strongest">
+            A self-assessment of the tools I use most often in production.
+          </SectionHeading>
+          <Reveal className="proficiency card">
+            {proficiency.map((skill, index) => (
+              <div key={skill.name} className="proficiency-row">
+                <div className="proficiency-label">
+                  <span>{skill.name}</span>
+                  <span className="muted">{skill.level}%</span>
+                </div>
+                <div
+                  className="proficiency-track"
+                  role="progressbar"
+                  aria-label={skill.name}
+                  aria-valuenow={skill.level}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
+                  <motion.div
+                    className="proficiency-fill"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 1, delay: (index % 2) * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                </div>
+              </div>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+    </>
   );
 }
 
