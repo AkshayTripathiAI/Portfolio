@@ -56,9 +56,16 @@ npm run dev            # http://localhost:5000
 | `MONGO_URI`   | MongoDB connection string (required)                                        |
 | `PORT`        | Local port, defaults to `5000`                                              |
 | `CORS_ORIGIN` | Comma-separated list of allowed origins. Leave empty to allow all origins. |
+| `GROQ_API_KEY` | Groq API key for the chat assistant. Without it the chat shows an offline message. |
+| `GROQ_MODEL`  | Optional model override (defaults to `openai/gpt-oss-120b`, falling back to `openai/gpt-oss-20b`). |
 
 `POST /api/contact` accepts `{ name, email, message }`. Input is validated and length-limited, and each IP can send
 5 messages per 15 minutes.
+
+`POST /api/chat` accepts `{ messages: [{ role, content }] }` and streams the answer as Server-Sent Events
+(`data: {"delta": "..."}` … `data: {"done": true}`). The assistant answers only from
+[`backend/data/profile.md`](backend/data/profile.md) — update that file when the resume changes. Each IP can ask
+20 questions per 10 minutes.
 
 ### Frontend
 
@@ -68,7 +75,7 @@ npm install
 npm start              # http://localhost:3000
 ```
 
-By default the frontend talks to the deployed backend. To use a local backend, create `frontend/.env`:
+By default the frontend talks to the deployed backend. To use a local backend, create `frontend/.env.development.local`:
 
 ```env
 REACT_APP_API_URL=http://localhost:5000
@@ -80,5 +87,5 @@ Other scripts: `npm test` and `npm run build`.
 
 Both apps deploy to Vercel as separate projects:
 
-- **backend/** – set `MONGO_URI` (and ideally `CORS_ORIGIN` = your frontend URL) in the project's environment variables.
+- **backend/** – set `MONGO_URI`, `GROQ_API_KEY` (and ideally `CORS_ORIGIN` = your frontend URL) in the project's environment variables.
 - **frontend/** – set `REACT_APP_API_URL` to the backend URL if it differs from the default in `src/config.js`.

@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
 const contactRoutes = require('../routes/contactRoutes');
+const chatRoutes = require('../routes/chatRoutes');
 
 const app = express();
 
@@ -20,11 +21,12 @@ const allowedOrigins = (process.env.CORS_ORIGIN || '')
     .filter(Boolean);
 app.use(cors({ origin: allowedOrigins.length ? allowedOrigins : '*' }));
 
-app.use(express.json({ limit: '10kb' }));
+app.use(express.json({ limit: '32kb' }));
 
 app.get('/', (req, res) => res.json({ status: 'ok' }));
 
 app.use('/api/contact', contactRoutes);
+app.use('/api/chat', chatRoutes);
 
 app.use((req, res) => res.status(404).json({ error: 'Not found' }));
 

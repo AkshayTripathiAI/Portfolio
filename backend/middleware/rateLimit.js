@@ -9,4 +9,13 @@ const contactLimiter = rateLimit({
     message: { error: 'Too many messages sent. Please try again in a few minutes.' },
 });
 
-module.exports = { contactLimiter };
+// Each chat answer costs LLM tokens, so cap how many questions one visitor can ask.
+const chatLimiter = rateLimit({
+    windowMs: 10 * 60 * 1000,
+    limit: 20,
+    standardHeaders: 'draft-7',
+    legacyHeaders: false,
+    message: { error: "You've asked a lot of questions! Please try again in a few minutes, or email Akshay directly." },
+});
+
+module.exports = { contactLimiter, chatLimiter };
