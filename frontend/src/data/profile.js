@@ -8,6 +8,13 @@ import smartCommerce from '../assets/smartcommerce-ai.webp';
 import insightReview from '../assets/insightreview-ai.webp';
 import videoPolish from '../assets/video-polish-studio.webp';
 import jevPhysicsLab from '../assets/jev-physics-lab.webp';
+import habitifyShot from '../assets/earlier/habitify.webp';
+import snapnoteShot from '../assets/earlier/snap-notes.webp';
+import placePickerShot from '../assets/earlier/place-picker.webp';
+import shoppyCartShot from '../assets/earlier/shoppy-cart.webp';
+import quizPlayShot from '../assets/earlier/quiz-play.webp';
+import investMateShot from '../assets/earlier/invest-mate.webp';
+import ticTacToeShot from '../assets/earlier/tic-tac-toe.webp';
 
 const GITHUB = 'https://github.com/AkshayTripathiAI';
 
@@ -180,13 +187,13 @@ export const projects = [
 
 // Smaller web apps from before the AI work. Shown as a compact list on the Projects page only.
 export const earlierProjects = [
-  { title: 'Habitify', description: 'Habit tracker built with React Native, Expo and Redux Toolkit.', link: `${GITHUB}/Habitify` },
-  { title: 'Snapnote', description: 'Note-taking app built with React and Material UI icons.', link: `${GITHUB}/Snapnote` },
-  { title: 'PlacePicker', description: 'Pick and save places, sorted by distance from your location.', link: `${GITHUB}/PlacePicker` },
-  { title: 'ShoppyCart', description: 'Shopping cart with global state via React Context.', link: `${GITHUB}/ShoppyCart` },
-  { title: 'QuizPlay', description: 'Timed quiz app built with React.', link: `${GITHUB}/QuizPlay` },
-  { title: 'InvestMate', description: 'Investment growth calculator built with React.', link: `${GITHUB}/InvestMate` },
-  { title: 'Tic-tac-toe', description: 'Two-player tic-tac-toe in React.', link: `${GITHUB}/Tic-tak-toe` },
+  { title: 'Habitify', description: 'Habit tracker built with React Native, Expo and Redux Toolkit.', link: `${GITHUB}/Habitify`, image: habitifyShot },
+  { title: 'Snapnote', description: 'Note-taking app built with React and Material UI icons.', link: `${GITHUB}/Snapnote`, image: snapnoteShot },
+  { title: 'PlacePicker', description: 'Pick and save places, sorted by distance from your location.', link: `${GITHUB}/PlacePicker`, image: placePickerShot },
+  { title: 'ShoppyCart', description: 'Shopping cart with global state via React Context.', link: `${GITHUB}/ShoppyCart`, image: shoppyCartShot },
+  { title: 'QuizPlay', description: 'Timed quiz app built with React.', link: `${GITHUB}/QuizPlay`, image: quizPlayShot },
+  { title: 'InvestMate', description: 'Investment growth calculator built with React.', link: `${GITHUB}/InvestMate`, image: investMateShot },
+  { title: 'Tic-tac-toe', description: 'Two-player tic-tac-toe in React.', link: `${GITHUB}/Tic-tak-toe`, image: ticTacToeShot },
 ];
 
 // Each skill uses either a brand icon component (`Icon`) or a Bootstrap icon class (`bi`).

@@ -29,6 +29,11 @@ function Projects() {
               {earlierProjects.map((project) => (
                 <li key={project.title}>
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="earlier-card">
+                    {project.image && (
+                      <span className="earlier-thumb">
+                        <img src={project.image} alt="" loading="lazy" />
+                      </span>
+                    )}
                     <span className="earlier-title">
                       {project.title} <i className="bi bi-arrow-up-right" aria-hidden="true" />
                     </span>
