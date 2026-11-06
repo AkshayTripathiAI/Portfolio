@@ -4,13 +4,10 @@ import {
 } from 'react-icons/si';
 
 import profilePic from '../assets/akshay-tripathi.png';
-import placePicker from '../assets/place-picker.png';
-import quizPlay from '../assets/quiz-play.png';
-import shoppyCart from '../assets/shoppy-cart.png';
-import ticTacToe from '../assets/tic-tac-toe.png';
-import investMate from '../assets/invest-mate.png';
-import habitify from '../assets/habitify.png';
-import snapNotes from '../assets/snap-notes.png';
+import smartCommerce from '../assets/smartcommerce-ai.webp';
+import insightReview from '../assets/insightreview-ai.webp';
+import videoPolish from '../assets/video-polish-studio.webp';
+import jevPhysicsLab from '../assets/jev-physics-lab.webp';
 
 const GITHUB = 'https://github.com/AkshayTripathiAI';
 
@@ -149,14 +146,36 @@ export const education = {
   years: '2019 – 2023',
 };
 
+// `demo` (optional) adds a "Live demo" link next to the GitHub link.
 export const projects = [
-  { title: 'PlacePicker', description: 'A location picker app using the Google Maps API.', link: `${GITHUB}/PlacePicker`, image: placePicker },
-  { title: 'QuizPlay', description: 'A quiz application built for fun learning experiences.', link: `${GITHUB}/QuizPlay`, image: quizPlay },
-  { title: 'ShoppyCart', description: 'E-commerce platform with a smooth user experience.', link: `${GITHUB}/ShoppyCart`, image: shoppyCart },
-  { title: 'InvestMate', description: 'An app to track and manage your investments.', link: `${GITHUB}/InvestMate`, image: investMate },
-  { title: 'Habitify', description: 'A habit tracking app with a clean UI.', link: `${GITHUB}/Habitify`, image: habitify },
-  { title: 'Snapnote', description: 'Take quick notes and keep them organised.', link: `${GITHUB}/Snapnote`, image: snapNotes },
-  { title: 'Tic-tac-toe', description: 'The classic game, built with vanilla JavaScript.', link: `${GITHUB}/Tic-tak-toe`, image: ticTacToe },
+  {
+    title: 'SmartCommerce AI',
+    description: 'E-commerce platform with a Gemini tool-calling shopping agent that searches, adds to cart and checks orders, plus semantic search, recommendations and RAG over store policies.',
+    tags: ['FastAPI', 'Next.js', 'Gemini', 'Qdrant', 'PostgreSQL'],
+    link: `${GITHUB}/SmartCommerce_AI`,
+    image: smartCommerce,
+  },
+  {
+    title: 'InsightReview AI',
+    description: 'Review intelligence pipeline: LLM aspect-based sentiment, AI pros/cons summaries, semantic search and cited RAG Q&A, with a Streamlit dashboard.',
+    tags: ['FastAPI', 'Groq', 'Gemini embeddings', 'Qdrant', 'Streamlit'],
+    link: `${GITHUB}/Amazon_review_scrapper`,
+    image: insightReview,
+  },
+  {
+    title: 'Video Polish Studio',
+    description: 'Turns raw NotebookLM videos into upload-ready YouTube videos: Whisper transcripts, ElevenLabs voice-clone re-voicing time-fitted to the timeline, captions and Shorts reframing.',
+    tags: ['Python', 'faster-whisper', 'ElevenLabs', 'ffmpeg'],
+    link: `${GITHUB}/video-polish-studio`,
+    image: videoPolish,
+  },
+  {
+    title: 'Jev Physics Lab',
+    description: 'Experiment where typed AI decisions drive a live physics simulation: each collision is described to the model, and its structured answer sets the restitution and sound.',
+    tags: ['Python', 'Structured outputs', 'NumPy', 'Matplotlib'],
+    link: `${GITHUB}/jev-physics-lab`,
+    image: jevPhysicsLab,
+  },
 ];
 
 // Each skill uses either a brand icon component (`Icon`) or a Bootstrap icon class (`bi`).

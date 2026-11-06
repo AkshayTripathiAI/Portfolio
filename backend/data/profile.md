@@ -81,13 +81,17 @@ Kamla Nehru Institute of Technology — B.Tech, Electronics, CGPA 9.21/10 (2019 
 
 ## Personal side projects (on GitHub)
 
-- PlacePicker — a location picker app using the Google Maps API.
-- QuizPlay — a quiz application for fun learning.
-- ShoppyCart — an e-commerce platform.
-- InvestMate — an app to track and manage investments.
-- Habitify — a habit tracking app.
-- Snapnote — a quick note-taking app.
-- Tic-tac-toe — the classic game in vanilla JavaScript.
+- SmartCommerce AI — an AI e-commerce platform (FastAPI, Next.js, PostgreSQL). A Gemini tool-calling shopping
+  agent searches products, adds items to the cart and checks orders; it also has semantic product search with
+  Qdrant, personalised recommendations and RAG answers about store policies.
+- InsightReview AI — a review intelligence pipeline (FastAPI, PostgreSQL, Qdrant, Streamlit). An LLM on Groq
+  extracts aspect-level sentiment and writes pros/cons summaries; Gemini embeddings power semantic search and RAG
+  Q&A that cites the reviews it used.
+- Video Polish Studio — Python + ffmpeg tooling that turns raw NotebookLM videos into upload-ready YouTube videos:
+  faster-whisper transcripts, ElevenLabs voice-clone re-voicing time-fitted to the original timeline, burned-in
+  captions, music and 9:16 Shorts reframing.
+- Jev Physics Lab — an experiment where typed AI decisions (TypeSafe AI's Jev) control a running physics
+  simulation: the model's structured answer sets the bounciness and sound of each collision.
 
 ## About this website
 

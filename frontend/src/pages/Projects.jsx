@@ -13,7 +13,7 @@ function Projects() {
           <Reveal>
             <span className="eyebrow">Projects</span>
             <h1>Things I've built</h1>
-            <p>Personal projects where I explore new tools and ideas. The source for each one is on GitHub.</p>
+            <p>AI projects I've built outside work: agents, RAG, LLM pipelines and speech tooling. The source for each one is on GitHub.</p>
           </Reveal>
         </div>
       </section>
