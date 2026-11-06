@@ -1,7 +1,7 @@
 import React from 'react';
 import Reveal from '../components/Reveal';
 import ProjectsList from '../components/ProjectsList';
-import { socials } from '../data/profile';
+import { socials, earlierProjects } from '../data/profile';
 
 function Projects() {
   const github = socials.find((s) => s.label === 'GitHub');
@@ -21,6 +21,23 @@ function Projects() {
       <section className="section-tight">
         <div className="container">
           <ProjectsList />
+
+          <Reveal className="earlier-projects">
+            <h2>Earlier web projects</h2>
+            <p>Smaller React and React Native apps from when I was building frontend skills.</p>
+            <ul className="earlier-grid">
+              {earlierProjects.map((project) => (
+                <li key={project.title}>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="earlier-card">
+                    <span className="earlier-title">
+                      {project.title} <i className="bi bi-arrow-up-right" aria-hidden="true" />
+                    </span>
+                    <span className="earlier-desc">{project.description}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
           {github && (
             <Reveal className="cta-band" style={{ marginTop: 56 }}>
               <h2>Want to see more code?</h2>

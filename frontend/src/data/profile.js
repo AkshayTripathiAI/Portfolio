@@ -159,7 +159,7 @@ export const projects = [
     title: 'InsightReview AI',
     description: 'Review intelligence pipeline: LLM aspect-based sentiment, AI pros/cons summaries, semantic search and cited RAG Q&A, with a Streamlit dashboard.',
     tags: ['FastAPI', 'Groq', 'Gemini embeddings', 'Qdrant', 'Streamlit'],
-    link: `${GITHUB}/Amazon_review_scrapper`,
+    link: `${GITHUB}/insight-review-ai`,
     image: insightReview,
   },
   {
@@ -176,6 +176,17 @@ export const projects = [
     link: `${GITHUB}/jev-physics-lab`,
     image: jevPhysicsLab,
   },
+];
+
+// Smaller web apps from before the AI work. Shown as a compact list on the Projects page only.
+export const earlierProjects = [
+  { title: 'Habitify', description: 'Habit tracker built with React Native, Expo and Redux Toolkit.', link: `${GITHUB}/Habitify` },
+  { title: 'Snapnote', description: 'Note-taking app built with React and Material UI icons.', link: `${GITHUB}/Snapnote` },
+  { title: 'PlacePicker', description: 'Pick and save places, sorted by distance from your location.', link: `${GITHUB}/PlacePicker` },
+  { title: 'ShoppyCart', description: 'Shopping cart with global state via React Context.', link: `${GITHUB}/ShoppyCart` },
+  { title: 'QuizPlay', description: 'Timed quiz app built with React.', link: `${GITHUB}/QuizPlay` },
+  { title: 'InvestMate', description: 'Investment growth calculator built with React.', link: `${GITHUB}/InvestMate` },
+  { title: 'Tic-tac-toe', description: 'Two-player tic-tac-toe in React.', link: `${GITHUB}/Tic-tak-toe` },
 ];
 
 // Each skill uses either a brand icon component (`Icon`) or a Bootstrap icon class (`bi`).

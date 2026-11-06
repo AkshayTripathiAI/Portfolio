@@ -93,6 +93,9 @@ Kamla Nehru Institute of Technology — B.Tech, Electronics, CGPA 9.21/10 (2019 
 - Jev Physics Lab — an experiment where typed AI decisions (TypeSafe AI's Jev) control a running physics
   simulation: the model's structured answer sets the bounciness and sound of each collision.
 
+Earlier, smaller web projects (React / React Native): Habitify (habit tracker), Snapnote (notes), PlacePicker,
+ShoppyCart, QuizPlay, InvestMate and Tic-tac-toe.
+
 ## About this website
 
 This portfolio is built with React and a Node.js/Express backend. This chat assistant runs on an open-weight LLM
