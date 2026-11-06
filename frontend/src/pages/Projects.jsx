@@ -1,7 +1,7 @@
 import React from 'react';
 import Reveal from '../components/Reveal';
 import ProjectsList from '../components/ProjectsList';
-import { socials, earlierProjects } from '../data/profile';
+import { socials, earlierProjects, games } from '../data/profile';
 
 function Projects() {
   const github = socials.find((s) => s.label === 'GitHub');
@@ -21,6 +21,12 @@ function Projects() {
       <section className="section-tight">
         <div className="container">
           <ProjectsList />
+
+          <Reveal className="earlier-projects">
+            <h2>Browser games</h2>
+            <p>Small games I made while learning JavaScript and React; most are playable right here. The Chhota Bheem ones are non-commercial fan games; the characters belong to their owners.</p>
+          </Reveal>
+          <ProjectsList items={games} demoLabel="Play now" />
 
           <Reveal className="earlier-projects">
             <h2>Earlier web projects</h2>

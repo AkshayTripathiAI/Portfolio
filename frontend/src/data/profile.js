@@ -15,6 +15,10 @@ import shoppyCartShot from '../assets/earlier/shoppy-cart.webp';
 import quizPlayShot from '../assets/earlier/quiz-play.webp';
 import investMateShot from '../assets/earlier/invest-mate.webp';
 import ticTacToeShot from '../assets/earlier/tic-tac-toe.webp';
+import bheemLadooShot from '../assets/games/bheem-ladoo.webp';
+import bheemAdventureShot from '../assets/games/bheem-adventure.webp';
+import ladooBasicShot from '../assets/games/ladoo-basic.webp';
+import adventureGamesShot from '../assets/games/adventure-games.webp';
 
 const GITHUB = 'https://github.com/AkshayTripathiAI';
 
@@ -185,6 +189,51 @@ export const projects = [
   },
 ];
 
+// Browser games. `demo` links to the playable GitHub Pages build.
+const PAGES = 'https://akshaytripathiai.github.io';
+
+export const games = [
+  {
+    title: 'Chota Bheem Loves Ladoo',
+    description: 'Canvas game: steer Bheem to collect ladoos while enemies chase you. Levels speed up, with touch controls and a saved high score.',
+    tags: ['HTML5 Canvas', 'JavaScript'],
+    link: `${GITHUB}/Bheem-Ladoo-2`,
+    demo: `${PAGES}/Bheem-Ladoo-2/`,
+    image: bheemLadooShot,
+  },
+  {
+    title: 'Chota Bheem Adventures',
+    description: 'Endless runner built with DOM elements and CSS animations: jump over a charging bull that gets faster with every dodge.',
+    tags: ['JavaScript', 'CSS animations'],
+    link: `${GITHUB}/Chota-Bheem-Adventure-game`,
+    demo: `${PAGES}/Chota-Bheem-Adventure-game/`,
+    image: bheemAdventureShot,
+  },
+  {
+    title: 'Ladoo Dash',
+    description: 'My first canvas game: reach the ladoo while dodging bouncing enemies.',
+    tags: ['HTML5 Canvas', 'JavaScript'],
+    link: `${GITHUB}/basic-bheem-ladoo-game`,
+    demo: `${PAGES}/basic-bheem-ladoo-game/`,
+    image: ladooBasicShot,
+  },
+  {
+    title: 'Adventure Games',
+    description: 'Arcade launcher that loads the games above plus Gravity Ball, a CreateJS platformer where you flip gravity, from one sidebar.',
+    tags: ['JavaScript', 'CreateJS', 'iframes'],
+    link: `${GITHUB}/Adventure-Game`,
+    demo: `${PAGES}/Adventure-Game/`,
+    image: adventureGamesShot,
+  },
+  {
+    title: 'Tic-tac-toe',
+    description: 'Two-player tic-tac-toe in React with editable player names, a move log and win/draw detection.',
+    tags: ['React', 'Vite'],
+    link: `${GITHUB}/Tic-tak-toe`,
+    image: ticTacToeShot,
+  },
+];
+
 // Smaller web apps from before the AI work. Shown as a compact list on the Projects page only.
 export const earlierProjects = [
   { title: 'Habitify', description: 'Habit tracker built with React Native, Expo and Redux Toolkit.', link: `${GITHUB}/Habitify`, image: habitifyShot },
@@ -193,7 +242,6 @@ export const earlierProjects = [
   { title: 'ShoppyCart', description: 'Shopping cart with global state via React Context.', link: `${GITHUB}/ShoppyCart`, image: shoppyCartShot },
   { title: 'QuizPlay', description: 'Timed quiz app built with React.', link: `${GITHUB}/QuizPlay`, image: quizPlayShot },
   { title: 'InvestMate', description: 'Investment growth calculator built with React.', link: `${GITHUB}/InvestMate`, image: investMateShot },
-  { title: 'Tic-tac-toe', description: 'Two-player tic-tac-toe in React.', link: `${GITHUB}/Tic-tak-toe`, image: ticTacToeShot },
 ];
 
 // Each skill uses either a brand icon component (`Icon`) or a Bootstrap icon class (`bi`).

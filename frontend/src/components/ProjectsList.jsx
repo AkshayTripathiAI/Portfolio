@@ -3,8 +3,8 @@ import Reveal from './Reveal';
 import { projects } from '../data/profile';
 import './ProjectsList.css';
 
-function ProjectsList({ limit }) {
-  const displayedProjects = limit ? projects.slice(0, limit) : projects;
+function ProjectsList({ limit, items = projects, demoLabel = 'Live demo' }) {
+  const displayedProjects = limit ? items.slice(0, limit) : items;
 
   return (
     <div className="projects-grid">
@@ -24,7 +24,7 @@ function ProjectsList({ limit }) {
             <div className="project-links">
               {project.demo && (
                 <a href={project.demo} target="_blank" rel="noopener noreferrer" className="link-arrow">
-                  Live demo <i className="bi bi-box-arrow-up-right" aria-hidden="true" />
+                  {demoLabel} <i className="bi bi-box-arrow-up-right" aria-hidden="true" />
                   <span className="visually-hidden"> – {project.title}</span>
                 </a>
               )}
