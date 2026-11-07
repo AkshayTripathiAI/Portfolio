@@ -30,21 +30,29 @@ function Projects() {
 
           <Reveal className="earlier-projects">
             <h2>Earlier web projects</h2>
-            <p>Smaller React and React Native apps from when I was building frontend skills.</p>
+            <p>Smaller React and JavaScript apps from when I was building frontend skills. Most run live in your browser.</p>
             <ul className="earlier-grid">
               {earlierProjects.map((project) => (
-                <li key={project.title}>
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="earlier-card">
-                    {project.image && (
-                      <span className="earlier-thumb">
-                        <img src={project.image} alt="" loading="lazy" />
-                      </span>
+                <li key={project.title} className="earlier-card">
+                  {project.image && (
+                    <a href={project.demo || project.link} target="_blank" rel="noopener noreferrer" className="earlier-thumb" tabIndex={-1} aria-hidden="true">
+                      <img src={project.image} alt="" loading="lazy" />
+                    </a>
+                  )}
+                  <span className="earlier-title">{project.title}</span>
+                  <span className="earlier-desc">{project.description}</span>
+                  <span className="earlier-links">
+                    {project.demo && (
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        Live demo <i className="bi bi-box-arrow-up-right" aria-hidden="true" />
+                        <span className="visually-hidden"> – {project.title}</span>
+                      </a>
                     )}
-                    <span className="earlier-title">
-                      {project.title} <i className="bi bi-arrow-up-right" aria-hidden="true" />
-                    </span>
-                    <span className="earlier-desc">{project.description}</span>
-                  </a>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      Code <i className="bi bi-github" aria-hidden="true" />
+                      <span className="visually-hidden"> – {project.title} on GitHub</span>
+                    </a>
+                  </span>
                 </li>
               ))}
             </ul>

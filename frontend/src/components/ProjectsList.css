@@ -124,7 +124,7 @@
 }
 
 .earlier-card:hover,
-.earlier-card:focus-visible {
+.earlier-card:focus-within {
   border-color: var(--border-strong);
   background: var(--surface-hover);
 }
@@ -155,12 +155,26 @@
   font-weight: 600;
 }
 
-.earlier-title i {
-  font-size: 0.8em;
-  color: var(--accent-2);
-}
 
 .earlier-desc {
+  flex: 1;
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+.earlier-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.earlier-links a {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+.earlier-links a:hover {
+  text-decoration: underline;
 }

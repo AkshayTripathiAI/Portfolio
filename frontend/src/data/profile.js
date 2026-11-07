@@ -15,6 +15,11 @@ import shoppyCartShot from '../assets/earlier/shoppy-cart.webp';
 import quizPlayShot from '../assets/earlier/quiz-play.webp';
 import investMateShot from '../assets/earlier/invest-mate.webp';
 import ticTacToeShot from '../assets/earlier/tic-tac-toe.webp';
+import geoPickerShot from '../assets/earlier/geo-picker.webp';
+import calculatorShot from '../assets/earlier/simple-calculator.webp';
+import counterShot from '../assets/earlier/counter-behind-scene.webp';
+import todoShot from '../assets/earlier/my-todo-list.webp';
+import playCounterShot from '../assets/games/play-counter.webp';
 import bheemLadooShot from '../assets/games/bheem-ladoo.webp';
 import bheemAdventureShot from '../assets/games/bheem-adventure.webp';
 import ladooBasicShot from '../assets/games/ladoo-basic.webp';
@@ -227,21 +232,34 @@ export const games = [
   },
   {
     title: 'Tic-tac-toe',
-    description: 'Two-player tic-tac-toe in React with editable player names, a move log and win/draw detection.',
+    description: 'Two-player tic-tac-toe in React: editable names, winning-line highlight, undo, and a scoreboard that survives reloads.',
     tags: ['React', 'Vite'],
     link: `${GITHUB}/Tic-tak-toe`,
+    demo: `${PAGES}/Tic-tak-toe/`,
     image: ticTacToeShot,
+  },
+  {
+    title: 'The Almost Final Countdown',
+    description: 'Timing game: stop the hidden timer as close to zero as you dare. Four difficulty levels with best scores saved per challenge.',
+    tags: ['React', 'Refs & portals'],
+    link: `${GITHUB}/playCounter`,
+    demo: `${PAGES}/playCounter/`,
+    image: playCounterShot,
   },
 ];
 
 // Smaller web apps from before the AI work. Shown as a compact list on the Projects page only.
 export const earlierProjects = [
-  { title: 'Habitify', description: 'Habit tracker built with React Native, Expo and Redux Toolkit.', link: `${GITHUB}/Habitify`, image: habitifyShot },
-  { title: 'Snapnote', description: 'Note-taking app built with React and Material UI icons.', link: `${GITHUB}/Snapnote`, image: snapnoteShot },
-  { title: 'PlacePicker', description: 'Pick and save places, sorted by distance from your location.', link: `${GITHUB}/PlacePicker`, image: placePickerShot },
-  { title: 'ShoppyCart', description: 'Shopping cart with global state via React Context.', link: `${GITHUB}/ShoppyCart`, image: shoppyCartShot },
-  { title: 'QuizPlay', description: 'Timed quiz app built with React.', link: `${GITHUB}/QuizPlay`, image: quizPlayShot },
-  { title: 'InvestMate', description: 'Investment growth calculator built with React.', link: `${GITHUB}/InvestMate`, image: investMateShot },
+  { title: 'ShoppyCart', description: 'Storefront with a persistent cart and a checkout flow, built with Context and useReducer.', link: `${GITHUB}/ShoppyCart`, demo: `${PAGES}/ShoppyCart/`, image: shoppyCartShot },
+  { title: 'GeoPicker', description: 'Browse, search and pick places to visit, sorted by distance from you. React + Express.', link: `${GITHUB}/GeoPicker`, demo: `${PAGES}/GeoPicker/`, image: geoPickerShot },
+  { title: 'PlacePicker', description: 'Build a to-visit list sorted by your location, saved in localStorage.', link: `${GITHUB}/PlacePicker`, demo: `${PAGES}/PlacePicker/`, image: placePickerShot },
+  { title: 'QuizPlay', description: 'Timed React quiz with keyboard answers, skip, review and a best score.', link: `${GITHUB}/QuizPlay`, demo: `${PAGES}/QuizPlay/`, image: quizPlayShot },
+  { title: 'InvestMate', description: 'Investment calculator with year-by-year growth and capital vs interest bars.', link: `${GITHUB}/InvestMate`, demo: `${PAGES}/InvestMate/`, image: investMateShot },
+  { title: 'React Behind the Scenes', description: 'Counter demo with a live render log showing how memo, keys and useCallback affect re-renders.', link: `${GITHUB}/Counter_behind_scene`, demo: `${PAGES}/Counter_behind_scene/`, image: counterShot },
+  { title: 'Simple Calculator', description: 'Vanilla JS calculator with chained operations, keyboard input and history.', link: `${GITHUB}/SimpleCalcultor`, demo: `${PAGES}/SimpleCalcultor/`, image: calculatorShot },
+  { title: 'MyTodoList', description: 'React todo app with routing, search, completion tracking and localStorage.', link: `${GITHUB}/MyTodoList`, demo: 'https://todolist-qbdw.onrender.com/', image: todoShot },
+  { title: 'Snapnote', description: 'Note-taking app with search, inline editing and notes saved in the browser.', link: `${GITHUB}/Snapnote`, image: snapnoteShot },
+  { title: 'Habitify', description: 'React Native habit tracker with streaks, daily check-offs and persistent storage.', link: `${GITHUB}/Habitify`, image: habitifyShot },
 ];
 
 // Each skill uses either a brand icon component (`Icon`) or a Bootstrap icon class (`bi`).

@@ -93,8 +93,10 @@ Kamla Nehru Institute of Technology — B.Tech, Electronics, CGPA 9.21/10 (2019 
 - Jev Physics Lab — an experiment where typed AI decisions (TypeSafe AI's Jev) control a running physics
   simulation: the model's structured answer sets the bounciness and sound of each collision.
 
-Earlier, smaller web projects (React / React Native): Habitify (habit tracker), Snapnote (notes), PlacePicker,
-ShoppyCart, QuizPlay, InvestMate and Tic-tac-toe.
+Earlier, smaller web projects (React / JavaScript), most with live demos on GitHub Pages: ShoppyCart, GeoPicker,
+PlacePicker, QuizPlay, InvestMate, React Behind the Scenes, Simple Calculator, MyTodoList, Snapnote and Habitify
+(React Native). Browser games: Chota Bheem Loves Ladoo, Chota Bheem Adventures, Ladoo Dash, Adventure Games,
+Tic-tac-toe and The Almost Final Countdown.
 
 ## About this website
 
