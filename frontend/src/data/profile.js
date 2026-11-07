@@ -4,6 +4,7 @@ import {
 } from 'react-icons/si';
 
 import profilePic from '../assets/akshay-tripathi.png';
+import docMitra from '../assets/docmitra.webp';
 import smartCommerce from '../assets/smartcommerce-ai.webp';
 import insightReview from '../assets/insightreview-ai.webp';
 import videoPolish from '../assets/video-polish-studio.webp';
@@ -164,6 +165,14 @@ export const education = {
 
 // `demo` (optional) adds a "Live demo" link next to the GitHub link.
 export const projects = [
+  {
+    title: 'DocMitra',
+    description: 'AI assistant for Indian personal paperwork: reads Aadhaar, PAN, licence, passport, RC and insurance, tracks expiry, flags name mismatches, and answers in English or Hinglish. LangGraph agent that only ever sees masked data.',
+    tags: ['LangGraph', 'FastAPI', 'OCR', 'Gemini', 'React'],
+    link: `${GITHUB}/DocMitra`,
+    demo: 'https://doc-mitra.vercel.app',
+    image: docMitra,
+  },
   {
     title: 'SmartCommerce AI',
     description: 'E-commerce platform with a Gemini tool-calling shopping agent that searches, adds to cart and checks orders, plus semantic search, recommendations and RAG over store policies.',

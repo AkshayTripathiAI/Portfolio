@@ -81,6 +81,11 @@ Kamla Nehru Institute of Technology — B.Tech, Electronics, CGPA 9.21/10 (2019 
 
 ## Personal side projects (on GitHub)
 
+- DocMitra — an AI assistant for Indian personal paperwork (FastAPI, LangGraph, React). A deterministic LangGraph
+  pipeline (image quality check, OCR, classification, field extraction) reads Aadhaar, PAN, driving licence, passport,
+  vehicle RC, insurance and PUC; it tracks expiry dates, flags name mismatches across documents, and a tool-calling
+  agent answers questions in English, Hindi or Hinglish while only ever seeing masked data. Live demo:
+  https://doc-mitra.vercel.app
 - SmartCommerce AI — an AI e-commerce platform (FastAPI, Next.js, PostgreSQL). A Gemini tool-calling shopping
   agent searches products, adds items to the cart and checks orders; it also has semantic product search with
   Qdrant, personalised recommendations and RAG answers about store policies.
