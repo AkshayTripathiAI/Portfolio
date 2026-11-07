@@ -200,7 +200,7 @@ const PAGES = 'https://akshaytripathiai.github.io';
 export const games = [
   {
     title: 'Chota Bheem Loves Ladoo',
-    description: 'Canvas game: steer Bheem to collect ladoos while enemies chase you. Levels speed up, with touch controls and a saved high score.',
+    description: 'Canvas game: collect ladoos while Kirmadas chase you. Hearts, golden ladoos, a level every 5 pickups, touch drag controls and a saved high score.',
     tags: ['HTML5 Canvas', 'JavaScript'],
     link: `${GITHUB}/Bheem-Ladoo-2`,
     demo: `${PAGES}/Bheem-Ladoo-2/`,
@@ -208,15 +208,15 @@ export const games = [
   },
   {
     title: 'Chota Bheem Adventures',
-    description: 'Endless runner built with DOM elements and CSS animations: jump over a charging bull that gets faster with every dodge.',
+    description: 'Endless runner: jump the charging bull as it speeds up and charges more often. Instant restart, tap-to-jump on phones and a best score.',
     tags: ['JavaScript', 'CSS animations'],
     link: `${GITHUB}/Chota-Bheem-Adventure-game`,
     demo: `${PAGES}/Chota-Bheem-Adventure-game/`,
     image: bheemAdventureShot,
   },
   {
-    title: 'Ladoo Dash',
-    description: 'My first canvas game: reach the ladoo while dodging bouncing enemies.',
+    title: 'Bheem Ladoo Dash',
+    description: 'Hold to run, let go to stop: time your dash between bouncing Kirmadas. Endless levels, three hearts and code-generated sound effects.',
     tags: ['HTML5 Canvas', 'JavaScript'],
     link: `${GITHUB}/basic-bheem-ladoo-game`,
     demo: `${PAGES}/basic-bheem-ladoo-game/`,
@@ -224,7 +224,7 @@ export const games = [
   },
   {
     title: 'Adventure Games',
-    description: 'Arcade launcher that loads the games above plus Gravity Ball, a CreateJS platformer where you flip gravity, from one sidebar.',
+    description: 'Arcade launcher for the games above plus Gravity Ball, a CreateJS platformer where you flip gravity to reach the goal, with checkpoints and a best time.',
     tags: ['JavaScript', 'CreateJS', 'iframes'],
     link: `${GITHUB}/Adventure-Game`,
     demo: `${PAGES}/Adventure-Game/`,
