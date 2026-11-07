@@ -169,6 +169,7 @@ export const projects = [
     description: 'E-commerce platform with a Gemini tool-calling shopping agent that searches, adds to cart and checks orders, plus semantic search, recommendations and RAG over store policies.',
     tags: ['FastAPI', 'Next.js', 'Gemini', 'Qdrant', 'PostgreSQL'],
     link: `${GITHUB}/SmartCommerce_AI`,
+    demo: 'https://smart-commerce-ai-ivory.vercel.app',
     image: smartCommerce,
   },
   {
@@ -176,6 +177,7 @@ export const projects = [
     description: 'Review intelligence pipeline: LLM aspect-based sentiment, AI pros/cons summaries, semantic search and cited RAG Q&A, with a Streamlit dashboard.',
     tags: ['FastAPI', 'Groq', 'Gemini embeddings', 'Qdrant', 'Streamlit'],
     link: `${GITHUB}/insight-review-ai`,
+    demo: 'https://insightreview-dashboard.onrender.com',
     image: insightReview,
   },
   {
