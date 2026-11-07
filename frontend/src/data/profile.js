@@ -257,8 +257,8 @@ export const earlierProjects = [
   { title: 'InvestMate', description: 'Investment calculator with year-by-year growth and capital vs interest bars.', link: `${GITHUB}/InvestMate`, demo: `${PAGES}/InvestMate/`, image: investMateShot },
   { title: 'React Behind the Scenes', description: 'Counter demo with a live render log showing how memo, keys and useCallback affect re-renders.', link: `${GITHUB}/Counter_behind_scene`, demo: `${PAGES}/Counter_behind_scene/`, image: counterShot },
   { title: 'Simple Calculator', description: 'Vanilla JS calculator with chained operations, keyboard input and history.', link: `${GITHUB}/SimpleCalcultor`, demo: `${PAGES}/SimpleCalcultor/`, image: calculatorShot },
-  { title: 'MyTodoList', description: 'React todo app with routing, search, completion tracking and localStorage.', link: `${GITHUB}/MyTodoList`, demo: 'https://todolist-qbdw.onrender.com/', image: todoShot },
-  { title: 'Snapnote', description: 'Note-taking app with search, inline editing and notes saved in the browser.', link: `${GITHUB}/Snapnote`, image: snapnoteShot },
+  { title: 'MyTodoList', description: 'React todo app with routing, search, completion tracking and localStorage.', link: `${GITHUB}/MyTodoList`, demo: `${PAGES}/MyTodoList/`, image: todoShot },
+  { title: 'Snapnote', description: 'Note-taking app with search, inline editing and notes saved in the browser.', link: `${GITHUB}/Snapnote`, demo: `${PAGES}/Snapnote/`, image: snapnoteShot },
   { title: 'Habitify', description: 'React Native habit tracker with streaks, daily check-offs and persistent storage.', link: `${GITHUB}/Habitify`, image: habitifyShot },
 ];
 
